@@ -195,7 +195,7 @@ Two-factor design accounts for both treatment effect and sequencing type variati
 | Treatment (primary) | treated, untreated |
 | Sequencing (secondary) | PE, SE |
 
-**PCA result:** PC1 separates by treatment, PC2 separates by sequencing type — confirms the two-factor design was appropriate with no hidden confounders.
+**PCA result:** PC1 separates by treatment, PC2 separates by sequencing type.
 
 **Sample-to-sample heatmap:** Samples cluster first by treatment then by sequencing type, consistent with PCA. Dark blue = similar expression profiles. No unexpected groupings.
 
