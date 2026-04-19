@@ -18,6 +18,7 @@
 ## Overview
 
 This pipeline performs a complete reference-based RNA-Seq differential expression analysis on *Drosophila melanogaster* data. The goal is to identify genes up- or down-regulated by RNAi-mediated knockdown of the **Pasilla (PS)** splicing factor gene. The analysis uses a two-factor design (treatment + sequencing type) to correctly account for a mixed single-end/paired-end dataset.
+
 ---
 
 ## Dataset
