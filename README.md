@@ -137,6 +137,25 @@ A spliced-aware aligner is required for eukaryotic RNA-Seq because reads derived
 
 **Output:** BAM files (coordinate-sorted), strand-specific coverage bedgraphs, per-gene counts
 
+#### 3a — Alignment Visualization (IGV + JBrowse2)
+
+BAM outputs were inspected at `chr4:540,000–560,000` in both **IGV** and **JBrowse2** for both paired-end samples (GSM461177, GSM461180).
+
+- Grey peaks = per-base read coverage
+- Connecting arcs between reads = splice junction events (reads spanning introns)
+- Sashimi plot numbers = reads supporting each junction
+
+**Strandness check region:** `chr3R:9,445,000–9,448,000` (*ps* gene locus). First-of-pair strand coloring showed an even red/blue split → unstranded library confirmed.
+
+#### 3b — Strand Coverage (pyGenomeTracks)
+
+STAR bedgraph outputs visualized at `chr4:540,000–560,000`:
+
+- **Strand 1 → blue**
+- **Strand 2 → red**
+
+Both strands show comparable coverage (~1.2–1.5×), confirming **unstranded** library. A stranded library would show signal on one strand only.
+
 ---
 
 ### Stage 4 — Strandness Estimation
@@ -183,7 +202,9 @@ Two-factor design accounts for both treatment effect and sequencing type variati
 
 **PCA result:** PC1 separates by treatment, PC2 separates by sequencing type — confirms the two-factor design was appropriate with no hidden confounders.
 
-**Outputs:** Normalized count matrix, DE results table (log2FC, p-value, padj), diagnostic plots (PCA, heatmap, MA plot, dispersion)
+**Sample-to-sample heatmap:** Samples cluster first by treatment then by sequencing type, consistent with PCA. Dark blue = similar expression profiles. No unexpected groupings.
+
+**Outputs:** Normalized count matrix, DE results table (log2FC, p-value, padj), PCA plot, sample-to-sample distance heatmap, MA plot, dispersion plot
 
 ---
 
