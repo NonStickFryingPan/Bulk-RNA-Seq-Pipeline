@@ -130,8 +130,6 @@ A spliced-aware aligner is required for eukaryotic RNA-Seq because reads derived
 | GSM461177 (untreated) | >83% |
 | GSM461180 (treated) | >79% |
 
-> Mapping rates below 70% warrant investigation for contamination. Both samples are within acceptable range.
-
 **Output:** BAM files (coordinate-sorted), strand-specific coverage bedgraphs, per-gene counts
 
 #### 3a — Alignment Visualization (IGV + JBrowse2)
@@ -142,7 +140,7 @@ BAM outputs were inspected at `chr4:540,000–560,000` in both **IGV** and **JBr
 - Connecting arcs between reads = splice junction events (reads spanning introns)
 - Sashimi plot numbers = reads supporting each junction
 
-**Strandness check region:** `chr3R:9,445,000–9,448,000` (*ps* gene locus). First-of-pair strand coloring showed an even red/blue split → unstranded library confirmed.
+**Strandness check region:** `chr3R:9,445,000–9,448,000`.
 
 #### 3b — Strand Coverage (pyGenomeTracks)
 
@@ -151,7 +149,7 @@ STAR bedgraph outputs visualized at `chr4:540,000–560,000`:
 - **Strand 1 → blue**
 - **Strand 2 → red**
 
-Both strands show comparable coverage (~1.2–1.5×), confirming **unstranded** library. A stranded library would show signal on one strand only.
+Both strands show comparable coverage (~1.2–1.5×).
 
 ---
 
@@ -179,7 +177,7 @@ Counts reads overlapping annotated exons per gene. Paired-end reads counted as s
 | Min MAPQ | 10 |
 | Paired-end counting | Yes (fragments) |
 
-**Assignment rate:** ~63% — acceptable; rates below 50% require investigation.  
+**Assignment rate:** ~63% — within acceptable range; rates below 50% require investigation.  
 **Top expressed gene:** `FBgn0284245` (~128,000 counts in untreated)
 
 **Outputs:** Count table (gene × sample), gene length file (used by goseq)
